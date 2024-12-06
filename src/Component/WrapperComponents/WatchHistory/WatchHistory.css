@@ -1,0 +1,10 @@
+.Heading{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.movieContainer{
+    padding-left: 1%;
+    position: relative;
+    margin-bottom: 5;
+}

@@ -1,0 +1,33 @@
+.ScrollButton{
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%);
+    /* z-index: 1; */
+}
+.subscribeButton{
+    border-radius: 20px;
+    color: gold;
+    margin-left: 2px;
+    border: 1px solid goldenrod;
+    background-color: rgb(153, 112, 63,.3);
+    font-size: 10px;
+    width: 60px;
+}
+
+.Category{
+    font-weight: bold; 
+    font-size: 20px; 
+    padding-left: 1% !important;
+}
+
+.WrapperDIV{
+    padding: 1%;
+    padding-left: 1%;
+    position: relative; 
+    margin-bottom: 50px;
+    /* border: 1px solid red; */
+}
+
+.GridContainer{
+    position: relative;
+}

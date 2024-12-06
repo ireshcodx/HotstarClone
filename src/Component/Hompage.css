@@ -1,0 +1,20 @@
+.Wrapper{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.Sidebar{
+    display: flex; 
+    justify-Content: center;
+    padding: 0;
+}
+
+.Main{
+    margin-left: 0;
+    padding-left: 20px;
+}
+
+.Body{
+    padding-bottom: 20px;
+}
