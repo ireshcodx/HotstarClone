@@ -20,9 +20,9 @@ function RazorpayPayment() {
                 navigate('/login'); // Navigate to a success page after payment
             },
             prefill: {
-                name: "Madhav Lonkar", // Optional pre-filled user info
-                email: "madhavlonkar2@gmail.com",
-                contact: "9370548600",
+                name: "Iresh Gopanpalli", // Optional pre-filled user info
+                email: "ireshgopanpalli126@gmail.com",
+                contact: "9503344564",
             },
             theme: {
                 color: "#3399cc", // Custom color for the checkout modal
