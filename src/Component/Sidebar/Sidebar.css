@@ -1,0 +1,45 @@
+.sidebar {
+    background: linear-gradient(to right, rgba(18, 18, 18, 1) 0%, rgba(18, 18, 18, 0.9) 100%);
+}
+
+.navItems {
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    /* color: white !important; */
+
+}
+
+.navItm{
+    color: #fff !important;
+}
+
+.icon {
+    filter: brightness(0) invert(1);
+    color: white !important;
+}
+
+.drawer {
+    color: white !important;
+}
+
+.subscribeButton {
+    height: 20px;
+    font-size: 10px;
+    color: gold;
+    border: none;
+    font-weight: bold;
+    width: 62px;
+    border-radius: 14px;
+    background-color: rgb(163, 124, 76, .3);
+}
+
+.ButtonDIV {
+    padding-top: 10px;
+}
+
+.sidebarContent {
+    padding: 16px;
+    color: white;
+}
