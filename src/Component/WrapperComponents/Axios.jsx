@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-async function getData(userUrl) {
+async function fetchAPI(userUrl) {
 
     const options = {
         method: 'GET',
@@ -21,4 +21,4 @@ async function getData(userUrl) {
     }
 }
 
-export default getData;
+export default fetchAPI;
