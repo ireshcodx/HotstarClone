@@ -24,6 +24,7 @@ export default function MultiActionAreaCard({ movie }) {
   const [snackbarOpen, setSnackbarOpen] = React.useState(false);
   const [Message, setMessage] = React.useState();
   const navigate = useNavigate();
+  const imageUrl = `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}` || 'https://via.placeholder.com/500x300';
 
   const addMovieToWatchListHandler = () => {
     const getRandomTimeLeft = () => {
@@ -31,12 +32,12 @@ export default function MultiActionAreaCard({ movie }) {
       const minutes = Math.floor(Math.random() * 60); // Random minutes between 0 and 59
       return `${hours}h ${minutes}m left`;
     };
-
+    const MovieTitle=movie.title || movie.name;
     const movieToAdd = {
       id: movie.id,
-      name: movie.title,
+      name: MovieTitle,
       timeLeft: getRandomTimeLeft(),
-      img: `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`,
+      img: imageUrl,
     };
 
     const found = movies.some(data => data.id === movieToAdd.id);
@@ -77,16 +78,16 @@ export default function MultiActionAreaCard({ movie }) {
   return (
     <>
       <Card className="overlay-card-content" sx={{ maxWidth: { lg: '100%', xs: '70%' }, backgroundColor: '#16181f' }}>
-        <>
+        <div>
           <CardMedia
             component="img"
             height={150}
-            image={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
+            image={movie.backdrop_path ? `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}` : 'https://via.placeholder.com/500x300?text=No+Poster'}
             alt={movie.name}
-            sx={{ objectFit: 'cover', borderRadius: '10px' }}
+            sx={{ objectFit: 'cover' }}
           />
           <CardActions>
-              <Button onClick={handleOpen} fullWidth variant="contained" sx={{fontSize:{lg:'1rem',xs:'9px'}, backgroundColor: '#fff', color: '#16181f' }}>
+              <Button onClick={handleOpen} fullWidth variant="contained" sx={{fontSize:{lg:'12px',xs:'9px'}, backgroundColor: '#fff', color: '#16181f' }}>
                 <PlayArrowIcon /> {isLogIn ? 'Watch Now' : 'Login Now'}
               </Button>
               <Button variant="outlined" sx={{ color: '#fff' }} onClick={addMovieToWatchListHandler} disabled={!isLogIn}>
@@ -94,14 +95,14 @@ export default function MultiActionAreaCard({ movie }) {
               </Button>
           </CardActions>
           <CardContent>
-            <Typography gutterBottom variant="h6" component="div" color="#fff">
-              {releaseDate} • {movie.original_language.toUpperCase()}  • <button className='UAbutton'>U/A{movie.adult ? '18+' : '16+'}</button>
+            <Typography gutterBottom component="div" color="#fff">
+            {movie.name || movie.title} • {movie.original_language.toUpperCase()}  • <button className='UAbutton'>U/A{movie.adult ? '18+' : '16+'}</button>
             </Typography>
             <Typography variant="body2" sx={{ color: '#8690a8' }}>
               {shortOverview}...
             </Typography>
           </CardContent>
-        </>
+        </div>
       </Card>
 
       {open && <OverlayModal movie={movie} releaseDate={releaseDate} open={open} handleClose={handleClose} />}
@@ -113,7 +114,7 @@ export default function MultiActionAreaCard({ movie }) {
           sx={{ backgroundColor: '#16181f' }}
           anchorOrigin={{
             vertical: 'top',
-            horizontal: 'right',  // set Snackbar at the top-right
+            horizontal: 'right', 
           }}
         >
           <Alert
