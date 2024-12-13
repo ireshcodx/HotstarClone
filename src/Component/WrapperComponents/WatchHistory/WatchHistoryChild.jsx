@@ -7,6 +7,7 @@ import CardActionArea from '@mui/material/CardActionArea';
 import ProgressBar from './ProgressBar';
 
 export default function ContinueWatching({movie}) {
+    // console.log(movie);
 
     return (
         <Card sx={{ maxWidth: 345 }}>
